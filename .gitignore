@@ -1,0 +1,24 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+
+# Arquivos de credenciais (nunca subir)
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+credentials.json
+secrets.json
+
+# Builds
+dist/
+build/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
