@@ -89,3 +89,13 @@ do mockup) e depois adapte pro desktop. Bom contraste e acessibilidade.
   (Facebook). Só o placeholder com instrução — não invente um ID.
 
 Quando terminar, me explique como abrir o `index.html` no navegador pra ver o resultado.
+
+---
+
+## 🧠 Segundo Cérebro (adicionado em 16/09/2026)
+
+Este repositório é uma **sala do andar `orion`** do Segundo Cérebro da Liv, que mora em `~/Cerebro`.
+- A recepção (`~/Cerebro/CLAUDE.md`) tem as regras gerais da Liv; o andar (`~/Cerebro/orion/CLAUDE.md`) tem o contexto do negócio; `~/Cerebro/LICOES.md` tem o que ela já corrigiu — **leia os três no início da sessão** (são curtos).
+- O histórico técnico detalhado continua **aqui**, neste CLAUDE.md e no STATUS deste repo. O cérebro guarda só o resumo da sala e as pendências.
+- Ao encerrar, use `/dormir` (comando em `.claude/commands/dormir.md` deste repo): ele grava aqui **e** avisa o cérebro. A Liv não copia nada.
+- Regras que valem aqui como em todo lugar: backup antes de mexer em produção; credencial nunca em arquivo versionado; antes de alterar n8n/Supabase/Neon/Vercel/Meta/Google em produção, mostrar o que vai fazer e pedir OK.
