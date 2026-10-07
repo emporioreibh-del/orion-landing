@@ -25,3 +25,6 @@ Thumbs.db
 
 # backups feitos pelo Segundo Cerebro
 CLAUDE.md.backup-cerebro-*
+
+# backups locais
+_backup-*/
