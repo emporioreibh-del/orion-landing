@@ -386,6 +386,15 @@
   }, { threshold: .12 });
   els.forEach(function(el){ io.observe(el); });
 })();
+/* Origem: se a pessoa chegou com utm (ex.: bio do Instagram), passa a mesma origem para o app */
+(function(){ try{
+  var q=new URLSearchParams(location.search); if(!q.get('utm_source')) return;
+  document.querySelectorAll('a[href*="app.orionvoss.com.br"]').forEach(function(a){
+    var u=new URL(a.href);
+    ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){ if(q.get(k)) u.searchParams.set(k,q.get(k)); });
+    a.href=u.toString();
+  });
+}catch(e){} })();
 /* Pixel: clique em qualquer botao que leva ao app conta como Lead */
 document.querySelectorAll('a[href*="app.orionvoss.com.br"]').forEach(function(a){
   a.addEventListener('click', function(){ try{ if(window.fbq) fbq('track','Lead'); }catch(e){} });
