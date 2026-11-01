@@ -218,7 +218,7 @@
 
 <!-- ============================== 0. FAIXA GOOGLE PLAY (01/11/2026) ============================== -->
 <div class="faixa-play so-android">
-  ✨ <b>Novidade:</b> a Orion agora está na <b>Google Play</b>. <a class="link-play" data-onde="faixa" href="https://play.google.com/store/apps/details?id=br.com.orionvoss.app&referrer=utm_source%3Dsite%26utm_medium%3Dfaixa">Baixar para Android →</a>
+  <span class="com-presente">🎁 <b>A Orion agora é app na Google Play:</b> instale e ganhe <b>3 leituras + 3 cartas de tarot</b> (até 30/11).</span><span class="sem-presente" hidden>✨ <b>Novidade:</b> a Orion agora está na <b>Google Play</b>.</span> <a class="link-play" data-onde="faixa" href="https://play.google.com/store/apps/details?id=br.com.orionvoss.app&referrer=utm_source%3Dsite%26utm_medium%3Dfaixa">Baixar para Android →</a>
 </div>
 
 <!-- ============================== 1. TOPO ============================== -->
@@ -244,7 +244,7 @@
       <p class="lede reveal">A Orion é uma inteligência artificial de autoconhecimento. Ela lê o seu mapa astral sem jargão, te entrega um retrato de como você ama, decide e se protege — e lembra do que você conta. Por trás dela, há uma psicoterapeuta de verdade.</p>
       <a class="btn reveal" href="https://app.orionvoss.com.br/entrar?utm_source=site&utm_medium=landing&utm_content=hero">Fazer meu mapa grátis</a>
       <p class="selo reveal">Mapa, retrato e as primeiras conversas de presente · sem cartão</p>
-      <p class="play-linha reveal so-android">Usa Android? <a class="link-play" data-onde="hero" href="https://play.google.com/store/apps/details?id=br.com.orionvoss.app&referrer=utm_source%3Dsite%26utm_medium%3Dhero">Baixe o app na Google Play</a></p>
+      <p class="play-linha reveal so-android">Usa Android? <span class="com-presente">Instale pela Google Play e ganhe <b>3 leituras de presente</b> (até 30/11): </span><a class="link-play" data-onde="hero" href="https://play.google.com/store/apps/details?id=br.com.orionvoss.app&referrer=utm_source%3Dsite%26utm_medium%3Dhero">Baixe o app na Google Play</a></p>
       <div class="por-tras reveal">
         <img src="assets/liv-sorriso.webp" alt="Livia Oliveira, psicoterapeuta criadora da Orion" />
         <span>Criada e supervisionada por <b>Livia Oliveira</b>, psicoterapeuta e criadora do Método Animas.e</span>
@@ -437,6 +437,11 @@ document.querySelectorAll('a[href*="app.orionvoss.com.br"]').forEach(function(a)
 (function(){ try{
   var ua=navigator.userAgent||''; var ios=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
   if(ios) document.documentElement.classList.add('so-ios');
+  /* Presente da loja: ganhar ate 30/11/2026 23:59 (Brasilia). Depois disso a faixa volta sozinha ao texto simples */
+  if(Date.now() >= Date.parse('2026-12-01T00:00:00-03:00')){
+    document.querySelectorAll('.com-presente').forEach(function(e){ e.hidden=true; });
+    document.querySelectorAll('.sem-presente').forEach(function(e){ e.hidden=false; });
+  }
   var q=new URLSearchParams(location.search);
   document.querySelectorAll('a.link-play').forEach(function(a){
     if(q.get('utm_source')){
