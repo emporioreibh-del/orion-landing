@@ -80,6 +80,25 @@
     .btn.claro:hover{ background:var(--indigo); color:#fff; }
     .selo{ margin-top:16px; font-size:.86rem; color:var(--tinta-2); }
 
+    /* faixa e botao da Google Play (01/11/2026) */
+    .faixa-play{ background:var(--indigo); color:#fff; font-size:.84rem; text-align:center; padding:10px 18px; line-height:1.5; }
+    .faixa-play a{ color:#fff; font-weight:600; text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
+    .faixa-play b{ color:#E9D9B4; font-weight:600; }
+    .play-linha{ margin-top:14px; font-size:.86rem; color:var(--tinta-2); }
+    .play-linha a{ font-weight:600; color:var(--roxo); }
+    .so-ios .so-android{ display:none !important; }
+    /* selos oficiais da Google Play no topo e no rodape (01/11/2026, pedido da Livia) */
+    header nav{ display:flex; align-items:center; gap:12px; }
+    header nav a.selo-topo{ padding:0; border:0; border-radius:0; line-height:0; }
+    header nav a.selo-topo:hover{ background:transparent; }
+    .selo-topo img{ height:40px; width:auto; display:block; }
+    .rodape-lojas{ display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center; }
+    footer a.selo-rodape{ border:0; line-height:0; }
+    .selo-rodape img{ height:64px; width:auto; display:block; }
+    .rodape-lojas .clique{ font-size:.86rem; font-weight:600; color:var(--roxo); }
+    .rodape-lojas .breve{ font-size:.78rem; color:var(--tinta-2); }
+    @media (max-width: 420px){ .selo-topo img{ height:34px; } header nav{ gap:8px; } }
+
     /* header */
     header{ position:sticky; top:0; z-index:10; background:rgba(250,247,242,.94); border-bottom:1px solid var(--linha); backdrop-filter:blur(6px); }
     header .wrap{ display:flex; align-items:center; justify-content:space-between; height:68px; }
@@ -197,6 +216,11 @@
 <!-- Todos os botoes levam ao app. A Liv pode trocar so este endereco se precisar. -->
 <!-- APP: https://app.orionvoss.com.br/entrar?utm_source=site&utm_medium=landing -->
 
+<!-- ============================== 0. FAIXA GOOGLE PLAY (01/11/2026) ============================== -->
+<div class="faixa-play so-android">
+  ✨ <b>Novidade:</b> a Orion agora está na <b>Google Play</b>. <a class="link-play" data-onde="faixa" href="https://play.google.com/store/apps/details?id=br.com.orionvoss.app&referrer=utm_source%3Dsite%26utm_medium%3Dfaixa">Baixar para Android →</a>
+</div>
+
 <!-- ============================== 1. TOPO ============================== -->
 <header>
   <div class="wrap">
@@ -204,7 +228,10 @@
       <img src="assets/emblema.webp" alt="" />
       <span>ORION VOSS</span>
     </a>
-    <nav><a href="https://app.orionvoss.com.br/entrar?utm_source=site&utm_medium=landing&utm_content=topo">Entrar</a></nav>
+    <nav>
+      <a class="selo-topo link-play so-android" data-onde="topo" href="https://play.google.com/store/apps/details?id=br.com.orionvoss.app&referrer=utm_source%3Dsite%26utm_medium%3Dtopo" target="_blank" rel="noopener" aria-label="Disponível no Google Play"><img src="assets/selo-google-play.png" alt="Disponível no Google Play" width="646" height="250" /></a>
+      <a href="https://app.orionvoss.com.br/entrar?utm_source=site&utm_medium=landing&utm_content=topo">Entrar</a>
+    </nav>
   </div>
 </header>
 
@@ -217,6 +244,7 @@
       <p class="lede reveal">A Orion é uma inteligência artificial de autoconhecimento. Ela lê o seu mapa astral sem jargão, te entrega um retrato de como você ama, decide e se protege — e lembra do que você conta. Por trás dela, há uma psicoterapeuta de verdade.</p>
       <a class="btn reveal" href="https://app.orionvoss.com.br/entrar?utm_source=site&utm_medium=landing&utm_content=hero">Fazer meu mapa grátis</a>
       <p class="selo reveal">Mapa, retrato e as primeiras conversas de presente · sem cartão</p>
+      <p class="play-linha reveal so-android">Usa Android? <a class="link-play" data-onde="hero" href="https://play.google.com/store/apps/details?id=br.com.orionvoss.app&referrer=utm_source%3Dsite%26utm_medium%3Dhero">Baixe o app na Google Play</a></p>
       <div class="por-tras reveal">
         <img src="assets/liv-sorriso.webp" alt="Livia Oliveira, psicoterapeuta criadora da Orion" />
         <span>Criada e supervisionada por <b>Livia Oliveira</b>, psicoterapeuta e criadora do Método Animas.e</span>
@@ -360,7 +388,7 @@
       <p class="bilhete">“Se você chegou até aqui, provavelmente tem algo que se repete e você quer entender. Comece pelo seu retrato. Ele é de presente.”</p>
       <p class="bilhete-ass">— Livia Oliveira, criadora da Orion</p>
       <a class="btn" href="https://app.orionvoss.com.br/entrar?utm_source=site&utm_medium=landing&utm_content=final">Fazer meu mapa grátis</a>
-      <p class="lojas">Funciona no navegador e instala no celular. Em breve na Google Play e na App Store.</p>
+      <p class="lojas">Funciona no navegador e já está na Google Play. App Store em breve.</p>
     </div>
   </div>
 </section>
@@ -373,7 +401,12 @@
       <p class="aviso">A Orion é uma inteligência artificial. Não substitui acompanhamento psicológico, médico ou terapêutico. Em caso de risco de vida, ligue 188 (CVV) ou 192 (SAMU).</p>
       <p class="aviso">© 2026 RAINHA DO REI TECH LTDA · CNPJ 53.016.956/0001-48 · <a href="mailto:contato@orionvoss.com.br">contato@orionvoss.com.br</a></p>
     </div>
-    <a href="https://instagram.com/orionvossoficial" target="_blank" rel="noopener">Instagram @orionvossoficial</a>
+    <div class="rodape-lojas">
+      <a class="selo-rodape link-play so-android" data-onde="rodape" href="https://play.google.com/store/apps/details?id=br.com.orionvoss.app&referrer=utm_source%3Dsite%26utm_medium%3Drodape" target="_blank" rel="noopener" aria-label="Disponível no Google Play"><img src="assets/selo-google-play.png" alt="Disponível no Google Play" width="646" height="250" /></a>
+      <a class="clique link-play so-android" data-onde="rodape-texto" href="https://play.google.com/store/apps/details?id=br.com.orionvoss.app&referrer=utm_source%3Dsite%26utm_medium%3Drodape" target="_blank" rel="noopener">Clique aqui e baixe o app da Orion</a>
+      <span class="breve">App Store: em breve</span>
+      <a href="https://instagram.com/orionvossoficial" target="_blank" rel="noopener" style="margin-top:10px">Instagram @orionvossoficial</a>
+    </div>
   </div>
 </footer>
 
@@ -400,6 +433,20 @@
 document.querySelectorAll('a[href*="app.orionvoss.com.br"]').forEach(function(a){
   a.addEventListener('click', function(){ try{ if(window.fbq) fbq('track','Lead'); }catch(e){} });
 });
+/* Google Play (01/11/2026): no iPhone esconde o que e so Android; passa a origem (utm) para a loja; clique conta no Pixel */
+(function(){ try{
+  var ua=navigator.userAgent||''; var ios=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  if(ios) document.documentElement.classList.add('so-ios');
+  var q=new URLSearchParams(location.search);
+  document.querySelectorAll('a.link-play').forEach(function(a){
+    if(q.get('utm_source')){
+      var r='utm_source='+q.get('utm_source')+'&utm_medium='+(q.get('utm_medium')||'site')+'&utm_content='+(a.getAttribute('data-onde')||'');
+      if(q.get('utm_campaign')) r+='&utm_campaign='+q.get('utm_campaign');
+      var u=new URL(a.href); u.searchParams.set('referrer',r); a.href=u.toString();
+    }
+    a.addEventListener('click',function(){ try{ if(window.fbq) fbq('trackCustom','CliqueGooglePlay',{onde:a.getAttribute('data-onde')}); }catch(e){} });
+  });
+}catch(e){} })();
 </script>
 </body>
 </html>
